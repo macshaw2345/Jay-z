@@ -525,6 +525,45 @@ marquee {
   </tr>
   <tr>
     <td>
+  <div class="column News">
+       <a href="https://www.cnn.com/2019/06/03/entertainment/jay-z-billionaire-rapper-trnd/index.html" target="_blank">
+      <img src="https://s.abcnews.com/images/GMA/190329_gma_pop1_hpMain_16x9_992.jpg" alt="Avatar" style="width:300px;height:300px;">
+        <p style="text-align:center">Superstar Jay-Z is the first billionaire rapper, says Forbes</p><p>rollingstone.com</p></a>
+    </div>
+  
+  </div>
+</div>
+</td>
+ <td>
+  
+  <div class="column News">
+      <a href="https://www.complex.com/music/2019/06/jim-jones-on-how-jay-z-and-camron-reunited-for-b-sides-concert" target="_blank">
+      <img src="https://images.complex.com/complex/images/c_limit,dpr_auto,q_90,w_720/fl_lossy,pg_1/fy5xyx7pdohnoon9cqdb/jay-z-camron-b-sides-concert" alt="Avatar" style="width:300px;height:300px;">
+      <p style="text-align:center">
+Jim Jones Explains How JAY-Z and Cam'ron Reunited for B-Sides Concert
+</p>
+<p>via Complex.com</p>
+    </div>
+  </div>
+</div>
+</td>
+</tr>
+  <tr>
+    <td>
+      <div class="column Social">
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Jay-Z is the first rapper to become a billionaire 🏆<br><br>The breakdown ⬇️<br><br>$310 million: Armand de Brignac<br>$210 million: Cash, investments<br>$100 million: D’Ussé<br>$100 million: Tidal<br>$75 million: Roc Nation<br>$75 million: Music catalog<br>$70 million: Art collection<br>$50 million: Real estate</p>&mdash; XXL Magazine (@XXL) <a href="https://twitter.com/XXL/status/1135614530699108352?ref_src=twsrc%5Etfw">June 3, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+</td>
+<td>
+  <div class="column Social">
+ <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Hov the first billionaire in hiphop and he started out at 26 and he is now 49 ✍🏾 I can never give up! 🐐 <a href="https://twitter.com/RocNation?ref_src=twsrc%5Etfw">@RocNation</a> <a href="https://t.co/EyjWQdvT0u">pic.twitter.com/EyjWQdvT0u</a></p>&mdash; zoey dollaz (@ZoeyDollaz) <a href="https://twitter.com/ZoeyDollaz/status/1135788140046835712?ref_src=twsrc%5Etfw">June 4, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+</td>
+</tr>
+  <tr>
+    <td>
       <div class="column Social">
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">This is how <a href="https://twitter.com/Beyonce?ref_src=twsrc%5Etfw">@Beyonce</a> and Jay-Z (<a href="https://twitter.com/S_C_?ref_src=twsrc%5Etfw">@S_C_</a>) make and spend their $1.26 billion <a href="https://t.co/pNj7xahdqa">pic.twitter.com/pNj7xahdqa</a></p>&mdash; Business Insider (@businessinsider) <a href="https://twitter.com/businessinsider/status/1126850376764805120?ref_src=twsrc%5Etfw">May 10, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
