@@ -98,46 +98,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", comic;}
 
          <button class="collapsible">Areas of practice</button>
 <div class="content"> 
-          <p>Family Law </p>
-          <div class="w3-light-black w3-round-xlarge w3-small">
-          </div>
-          <p>Divorce</p>
-          <div class="w3-light-black w3-round-xlarge w3-small">
-            </div>
-          <p>Father's right</p>
-          <div class="w3-light-black w3-round-xlarge w3-small">  
-          </div>
-          <p>Child Support</p>
-          <div class="w3-light-black w3-round-xlarge w3-small">
-          </div>
-          <p>Custody Support</p>
-          <div class="w3-light-black w3-round-xlarge w3-small">
-          </div>
-          <p>Custudy & Visitation</p>
-          <div class="w3-light-black w3-round-xlarge w3-small">
-          </div>
-          <p>Business Law</p>
-          <div class="w3-light-black w3-round-xlarge w3-small">
-          </div>
-          <p>Elder Law</p>
-          <div class="w3-light-black w3-round-xlarge w3-small">
-          </div>
-          <p>Immigration Law</p>
-          <div class="w3-light-black w3-round-xlarge w3-small">
-          </div>
-              <h1>Bar Admissions</h1>
-          <p>New York</p>
-          <div class="w3-light-black w3-round-xlarge w3-small">
-          </div>
-          <p>U.S. Federal Courts</p>
-          <div class="w3-light-black w3-round-xlarge w3-small w3-text-black">
-            </div>
-          <p>U.S. District Court Southern of New York</p>
-          <div class="w3-light-black w3-round-xlarge w3-small">  
-          </div>
-<p>U.S. District Court Eastern District of New Jersey</p>
-          <div class="w3-light-black w3-round-xlarge w3-small">
-          </div>
+       
 </div>
 </a>
           <br>
@@ -145,23 +106,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", comic;}
 
           <button class="collapsible">Adchekzz</button>
 <div class="content"> 
-          <p>Stephen Curry</p>
-          <img Src="http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3975.png&w=50&h=50 " height="50" width="50">
-          <div class="w3-light-black w3-round-xlarge">
-            <div class="w3-round-xlarge w3-blue" style="height:24px;width:97%">97% Rating</div>
-          </div>
-          <p>LeBron James</p>
-          <img src=" http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png&w=50&h=50" width="50" height="50">
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-red" style="height:24px;width:99%">99% Rating</div>
-          </div>
-          <p>Gordan Hayward</p>
-          <img src=" http://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4249.png&w=50&h=50" height="50" width="50">
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-green" style="height:24px;width:87%">87% Rating</div>
-          </div>
-        </a>
-        </div>
+       
     
           <br>
         </div>
