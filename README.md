@@ -29,7 +29,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", comic;}
 <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:200px" id="mySidebar">
   <div class="w3-container w3-display-container w3-padding-16">
     <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
-    <h3 class="w3-wide"><b>CHEKZZ<input id="myInput2" type="text" placeholder="Search..">
+    <h3 class="w3-wide"><b>CHEKZZ
 </b></h3>
   </div>
     <div class="w3-padding-100 w3-large w3-text-grey" style="font-weight:bold" colorname="black">
@@ -54,8 +54,8 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", comic;}
 </nav>
 
 <!-- Top menu on small screens -->
-<header class="w3-bar w3-top w3-hide-large w3-teal w3-xlarge">
-  <input id="myInput3" type="text" placeholder="Search..">
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+
   <div class="w3-bar-item w3-padding-24 w3-wide">Chekzz
 </div>
   <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-left" onclick="w3_open()"><i class="fa fa-bars"></i></a>
@@ -407,71 +407,8 @@ marquee {
 </style>
 
       
- <style>
-.container {
-  position: relative;
-  width: 50%;
-}
 
-.image {
-  opacity: 1;
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
-}
 
-.middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.container:hover .image {
-  opacity: 0.3;
-}
-
-.container:hover .middle {
-  opacity: 1;
-}
-
-.text {
-  background-color: #4CAF50;
-  color: white;
-  font-size: 16px;
-  padding: 16px 32px;
-}
-</style>
-<style>
-.button {
-  background-color: #65a4ab; 
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin: 10px 5px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-}
-
-.button1 {
-  box-shadow: 0 8px 16px 0 rgb(63, 160, 211), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-
-.button2:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
-</style>
 <style>
 table{
   font-family: arial, sans-serif;
@@ -520,7 +457,7 @@ input[type=text] {
 }
 
 input[type=submit] {
-  background-color: DodgerBlue;
+  background-color: blue;
   color: #fff;
   cursor: pointer;
 }
@@ -555,75 +492,306 @@ input[type=submit] {
   color: #ffffff; 
 }
 </style>
-<style></style>
-</head>
-<body>
-    <div class="w3-container">
-           <body>
-     
-            <h1 align="middle"><strong>Albums</h1></strong>
-<input id="myInput" type="text" placeholder="Search..">
-<br><br>
+<style>
+.filterDiv {
+  float: left;
+  background-color: #2196F3;
+  color: #ffffff;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 2px;
+  display: none;
+}
 
-<table>
-  <thead>
-    <tr>
-    <th>Album</th>
-    <th>Review</th>
-    <th>Rating</th>
-  </tr>
-  </thead>
-  <tbody id="myTable">
-  <tr>
-    <td><a href="https://listen.tidal.com/album/75413011"target="_blank"><img src="https://resources.tidal.com/images/7c298a27/caec/4058/9a7b/5f34cfd2c857/1280x1280.jpg" height="150" width="150"></td>
-    <td> <h2><strong>86%</h2></strong></div>
-                <td><p>4:44</p><p>Album</p><p>Jay-z</p><p>Tidal</p></td>
-          </div></td>
-  </tr>
-  <tr>
-    <td><a href="https://listen.tidal.com/album/35360165" target="_blank"> <img src="https://resources.tidal.com/images/6522a062/90f6/4156/b903/974a59e43c95/1280x1280.jpg"height="150" width="150"></td>
-    <td>   <h2><strong>84%</strong></h2></td>
-              <td>Magna Carta</p><p>Album</p><p>Jay-z</p><p>Tidal</p></td>
-  </tr>
-  <tr>
-    <td><a href="https://listen.tidal.com/album/35738574"target="_blank"><img src="https://resources.tidal.com/images/434891b3/0577/4f3b/962d/54af7046f948/1280x1280.jpg" height="150" width="150"></td>
-          <td><h2><strong>97%</strong></h2></div>
-    <td>The Bluprint</td>
+.show {
+  display: block;
+}
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+</style>
+<style></style>
+<style>
+.filterDiv {
+  float: left;
+  background-color: #2196F3;
+  color: #ffffff;
+  
+  line-height: 100px;
+  text-align: center;
+  margin: 2px;
+  display: none;
+  image-rendering: 15
+}
+
+.show {
+  display: block;
+}
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+</style>
+<style>
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 200%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 20px 32px;
+
+}
+</style>
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px blue;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: red;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: blue;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+</style>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+#myBtn2 {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn2:hover {
+  background-color: #555;
+}
+</style>
+</head>
+
+   <body>
+    <div class="w3-container">
+
+
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 3</div>
+    <a href="https://listen.tidal.com/album/35738574" a target="_blank">
+    <img src="https://resources.tidal.com/images/434891b3/0577/4f3b/962d/54af7046f948/1280x1280.jpg"  style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 3</div>
     
-</td>
-  </tr>
-  <tr>
-    <td><a href="https://listen.tidal.com/album/115084360" target="_blank"> <img src="https://resources.tidal.com/images/f8a1cb93/60c7/493b/b6f1/cbaaf5765f62/1280x1280.jpg"height="150" width="150">
-</a></td>
-    <td><h2><strong>95%</strong></h2></td>
-             <td>Reasonable Doubt</p><p>Album</p><p>Jay-z</p><p>Tidal</p></td>
-  </tr>
-        <tr>
-    <td><a href="https://listen.tidal.com/album/35425905"target="_blank"><img src="https://resources.tidal.com/images/039890ee/ddc6/4799/bd8b/92f5bdb67743/1280x1280.jpg" height="150" width="150"></td>
-    <td> <h2><strong>89%</strong></h2></td>
-             <td>American Gangster</p><p>Album</p><p>Jay-z</p><p>Tidal</p></td>
-  </tr>
-  <tr>
-    <td><a href="https://listen.tidal.com/album/35738002" target="_blank"> <img src="https://resources.tidal.com/images/f8291971/1547/4702/886a/2833a4b99cc9/1280x1280.jpg"height="150" width="150"></td>
-    <td> <h2><strong>87%</strong></h2></td>
-                <td>Kingdom Come</p><p>Album</p><p>Jay-z</p><p>Tidal</p></td>
-  </tr>
-  <tr>
-    <td><a href="https://listen.tidal.com/album/35589579"target="_blank"><img src="https://resources.tidal.com/images/ef0b762b/74f4/4323/a4e6/d2f0a421d925/1280x1280.jpg" height="150" width="150"></td>
-    <td><h2><strong>91%</strong></h2></td>
-             <td>The Black Album</p><p>Album</p><p>Jay-z</p><p>Tidal</p></td>
-</td>
-  </tr>
-  <tr>
-    <td><a href="https://listen.tidal.com/album/1228495" target="_blank"> <img src="https://resources.tidal.com/images/03d99bde/88f6/453e/93cb/a6abe80b924e/1280x1280.jpg"height="150" width="150">
-</a></td>
-    <td><h2><strong>84%</strong></h2></td>
-               <td>The Dynasty: Roc La Familia</p><p>Album</p><p>Jay-z</p><p>Tidal</p></td>
-  </tr>
-  </tbody>
-</table>
-    <h1 align="middle"><strong>News</h1></strong>
-<input id="myInput4" type="text" placeholder="Search..">
+    <a href="https://www.gq.com/story/watches-of-the-week-11-23-19" a target="_blank">
+    <img src="https://media.gq.com/photos/5dd81e78a8a4710008c8cfc1/16:9/w_2560%2Cc_limit/wotw-jay.jpg"  style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 3</div>
+    <a href="https://www.paperplane.shop/products/hoodie" a target="_blank">
+    <img src="https://cdn.shopify.com/s/files/1/0015/8855/9984/products/9C45B57C-AE75-44E4-9C75-3FCE1F6CA04C_2000x.jpg?v=1573235203"  style="width:100%">
+  </div>
+
+
+ 
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="https://resources.tidal.com/images/434891b3/0577/4f3b/962d/54af7046f948/1280x1280.jpg" style="width:100%" onclick="currentSlide(1)" alt="Jay-Z The Blueprint">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://media.gq.com/photos/5dd81e78a8a4710008c8cfc1/16:9/w_2560%2Cc_limit/wotw-jay.jpg" style="width:100%" onclick="currentSlide(2)" alt="Jay-Z Used These $40,000 Rolex Watches as Party Invites  
+">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://cdn.shopify.com/s/files/1/0015/8855/9984/products/9C45B57C-AE75-44E4-9C75-3FCE1F6CA04C_2000x.jpg?v=1573235203" style="width:100%" onclick="currentSlide(3)" alt=" P.E.A.C.E. HOODIE $130.00">
+    </div>
+
+    
+  </div>
+</div>
+<input id="myInput" type="text" placeholder="Search.. music, album and news.">
+  <body>
+    <div class="w3-container">
+         <h1 align="middle"><strong>News</h1></strong>
+
 <br><br>
 
 <table>
@@ -635,20 +803,207 @@ input[type=submit] {
   </tr>
   </thead>
   <tbody id="myTable">
+            <tr>
+    <td><div class="column News"><a href="https://www.gq.com/story/watches-of-the-week-11-23-19"target="_blank"><img src="https://media.gq.com/photos/5dd81e78a8a4710008c8cfc1/16:9/w_2560%2Cc_limit/wotw-jay.jpg" height="150" width="150"><p>gq.com</p><p>News</p></td>
+    <td><strong>Jay-Z Used These $40,000 Rolex Watches as Party Invites</strong></td></div>
+    <td><p><strong>Thankfully, the art of the invitation isn’t lost on Jay-Z, who held his Shawn Carter Foundation Gala last weekend.</strong></p></div>
+          </div></td>
+  </tr>
+          <tr>
+    <td><div class="column News"><a href="https://www.blackenterprise.com/jay-z-buys-back-intellectual-property-for-rocawear-for-15-million/"target="_blank"><img src="https://a9p9n2x2.stackpathcdn.com/wp-content/blogs.dir/1/files/2019/04/1139416656-e1556045934364-1000x675.jpg" height="150" width="150"><p>blackentrprise.com</p><p>News</p></td>
+    <td><strong>JAY-Z BUYS BACK INTELLECTUAL PROPERTY FOR ROCAWEAR FOR $15 MILLION</strong></td>
+    <td><p><strong>New York-based Iconix Brand Group stated in a regulatory filing last week that it had sold certain intellectual property assets to Jay-Z’s Roc Nation L.L.C. and membership interests in his Marcy Media L.L.C. for $15 million as part of the settlement reached, which included two lawsuits and an arbitration proceeding</strong></p></div>
+          </div></td>
+  </tr>
+
+      <tr>
+    <td><div class="column News"><a href="https://hiphopdx.com/news/id.53569/title.reggae-legend-buju-banton-partners-with-jay-zs-roc-nation"target="_blank"><img src="https://static.hiphopdx.com/2018/12/181207-Buju-Banton-827x620.jpg" height="150" width="150"><p>hiphopdx.com</p><p>News</p></td>
+    <td><strong>Reggae Legend Buju Banton Partners With JAY-Z's Roc Nation</strong></td>
+    <td><p><strong>Buju becomes the second Jamaican reggae artist to represent Roc Nation, following Damian “Jr. Gong” Marley.</strong></p></div>
+          </div></td>
+  </tr>
+    <tr>
+    <td><div class="column News"><a href="https://abc7.com/business/cannabis-store-backed-by-jay-z-opens-in-bellflower/5711441/"target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgeUKjAillBPqKYjGrmBogz3MDBlhI6peBpGUk3NZT_faDYpqQ-hvOqzenkzWQJLOVONae6g&usqp=CAI&s" height="150" width="150"><p>abc7.com</p><p>News</p></td>
+    <td><strong>Cannabis store backed by rap mogul Jay-Z opens in Bellflower</strong></td>
+    <td><p><strong>From the outside, the shop looks like a place to buy cold cuts. But customers will find CBD coffee, THC-infused chocolate and pre-rolls instead.</strong></p></div>
+          </div></td>
+  </tr>
   <tr>
-    <td><a href="https://www.complex.com/music/2019/11/listen-to-demo-version-beyonce-jay-z-song-part-ii-on-the-run"target="_blank"><img src="https://images.complex.com/complex/images/c_limit,dpr_auto,q_90,w_720/fl_lossy,pg_1/cshgqqztzdeypestcowi/bey-hov-demo" height="150" width="150"></td>
+    <td><div class="column News"><a href="https://www.complex.com/music/2019/11/listen-to-demo-version-beyonce-jay-z-song-part-ii-on-the-run"target="_blank"><img src="https://images.complex.com/complex/images/c_limit,dpr_auto,q_90,w_720/fl_lossy,pg_1/cshgqqztzdeypestcowi/bey-hov-demo" height="150" width="150"><p>complex</p><p>News</p></td>
     <td><strong>Here's the Demo Version of What Would Become Beyoncé and JAY-Z’s “Part II (On the Run)”</strong></td>
     <td><p><strong>James Fauntleroy has shared the song “Take Me,” the demo for Beyoncé and JAY-Z’s 2013 collaboration “Part II (On the Run).”</strong></p></div>
           </div></td>
   </tr>
   <tr>
-    <td><a href="https://pagesix.com/2019/11/14/jay-z-was-in-year-long-talks-with-hard-rock-to-host-scf-gala/" target="_blank"> <img src="https://nyppagesix.files.wordpress.com/2019/11/jay-z-hotel.jpg?quality=90&strip=all&w=618&h=410&crop=1"height="150" width="150"></td>
+    <td><div class="column News"><a href="https://pagesix.com/2019/11/14/jay-z-was-in-year-long-talks-with-hard-rock-to-host-scf-gala/" target="_blank"> <img src="https://nyppagesix.files.wordpress.com/2019/11/jay-z-hotel.jpg?quality=90&strip=all&w=618&h=410&crop=1"height="150" width="150"><p>Pagesix.com</p><p>News</p></td>
     <td><strong><p>Jay-Z was in ‘year-long talks’ with Hard Rock to host SCF gala</p></strong></td>
     <td><p><strong>“All of us at Hard Rock International are excited to host and contribute to a series of weekend fundraising events put on by Jay-Z and his Shawn Carter Foundation at the $1.5 billion Guitar Hotel expansion of the Seminole Hard Hotel & Casino Hollywood,” said Jim Allen, Chairman of Hard Rock International, exclusively told Page Six. </p></strong></div></td>
   </tr>
-  
+  <tr>
+    <td><div class="column News"><a href="https://www.hotnewhiphop.com/jay-zs-former-friend-dehaven-talks-feeling-abandoned-by-rapper-during-feds-case-news.96380.html"target="_blank"><img src="https://ssl.ulximg.com/public/userfiles/2019/11/23/GettyImages-1083448904.jpg" height="150" width="150"><p>Hotnewhiphop.com</p><p>News</p></strong></a></td>
+    <td><strong>Jay Z's Former Friend DeHaven Felt Abandoned By Rapper During Feds Case</strong></td>
+    <td><p><strong>"They didn't come to check on me, they didn't follow up with my family," he said of Jay and another friend, Emory. "I got word from [Jay] that, 'Yo, don't worry about it. I got you."</strong></p></div>
+          </div></td>
+  </tr>
+
+  <tr>
+    <td><div class="column News"><a href="https://www.billboard.com/articles/columns/hip-hop/8544051/jay-z-kanye-west-paris-songs-that-defined-the-decade" target="_blank"> <img src="https://www.billboard.com/files/styles/1500x845/public/media/jay-z-and-kanye-songs-dec-2019-billboard-1500.jpg"height="150" width="150"><p>Billboard.com</p></strong><p>News</p></strong></td>
+    <td><strong><p>Songs That Defined the Decade: Jay-Z & Kanye West's 'N---as in Paris'</p></strong></td>
+    <td><p><strong>“If we were gonna do it, we were gonna do it together,” Jay said at a 2011 listening party for the album. “No mailing it in.” And so they did, linking up around the world in studios in New York, Los Angeles, Abu Dhabi, Australia, and of course, Paris.  </p></strong></div></td>
+  </tr>
   </tbody>
 </table>
+         
+ <h1 align="middle"><strong>Albums</h1></strong>
+<table>
+  <thead>
+    <tr>
+    <th><div class="column music">Album</th>
+    <th><div class="column music">Review</th>
+    <th><div class="column music">Rating</th>
+  </tr>
+  </thead>
+  <tbody id="myTable">
+  <tr>
+    <td><div class="column music"><a href="https://listen.tidal.com/album/75413011"target="_blank"><img src="https://resources.tidal.com/images/7c298a27/caec/4058/9a7b/5f34cfd2c857/1280x1280.jpg" height="150" width="150"></td>
+    <td><div class="column music"> <h2><strong>86%</h2></strong></div>
+                <td><strong><p>4:44</p></strong><strong><p>Album</p></strong><strong><p>Jay-z</p></strong><strong><p>Tidal</p></strong><strong><p>2017</p></strong></td>
+          </div></td>
+  </tr>
+  <tr>
+    <td><div class="column music"><a href="https://listen.tidal.com/album/35360165" target="_blank"> <img src="https://resources.tidal.com/images/6522a062/90f6/4156/b903/974a59e43c95/1280x1280.jpg"height="150" width="150"></td>
+    <td> <div class="column music">  <h2><strong>84%</strong></h2></td>
+              <td><strong>Magna Carta</strong></p><strong><p>Album</p></strong><strong><p>Jay-z</p></strong><strong><p>Tidal</p></strong><strong><p>2013</p></strong></td>
+  </tr>
+  <tr>
+    <td><div class="column music"><a href="https://listen.tidal.com/album/35738574"target="_blank"><img src="https://resources.tidal.com/images/434891b3/0577/4f3b/962d/54af7046f948/1280x1280.jpg" height="150" width="150"></td>
+          <td><div class="column music"><h2><strong>97%</strong></h2></div>
+    <td><strong>The Blueprint</strong><strong><p>Album</p></strong><strong><p>Jay-z</p></strong><strong><p>Tidal</p></strong><strong><p>2001</p></strong></td>
+    
+</td>
+  </tr>
+  <tr>
+    <td><div class="column music"><a href="https://listen.tidal.com/album/115084360" target="_blank"> <img src="https://resources.tidal.com/images/f8a1cb93/60c7/493b/b6f1/cbaaf5765f62/1280x1280.jpg"height="150" width="150">
+</a></td>
+    <td><div class="column music"><h2><strong>95%</strong></h2></td>
+             <td><strong>Reasonable Doubt</strong></p><strong><p>Album</strong></p><p><strong>Jay-z</strong></p><p><strong>1996</strong></p><strong><p>Tidal</p></strong></td>
+  </tr>
+        <tr>
+    <td><div class="column music"><a href="https://listen.tidal.com/album/35425905"target="_blank"><img src="https://resources.tidal.com/images/039890ee/ddc6/4799/bd8b/92f5bdb67743/1280x1280.jpg" height="150" width="150"></td>
+    <td> <h2><strong>89%</strong></h2></td>
+             <td><strong>American Gangster</strong></p><p><strong>Album</strong></p><p><strong>Jay-z</strong></p><p><strong>2007</strong></p><p><strong>Tidal</strong></p></td>
+  </tr>
+  <tr>
+    <td><a href="https://listen.tidal.com/album/35738002" target="_blank"> <img src="https://resources.tidal.com/images/f8291971/1547/4702/886a/2833a4b99cc9/1280x1280.jpg"height="150" width="150"></td>
+    <td><h2><strong>87%</strong></h2></td>
+                <td><strong>Kingdom Come</strong></p><p><strong>Album</strong></p><p>Jay-z</p><p><strong>2006</strong></p><strong><p>Tidal</p></strong></td>
+  </tr>
+
+  <tr>
+    <td><div class="column music"><a href="https://listen.tidal.com/album/35589579"target="_blank"><img src="https://resources.tidal.com/images/ef0b762b/74f4/4323/a4e6/d2f0a421d925/1280x1280.jpg" height="150" width="150"></td>
+    <td><h2><strong>91%</strong></h2></td>
+             <td><strong>The Black Album</strong></p><strong><p>Album</p></strong><strong><p>Jay-z</strong></p><strong><p>2003</p></strong><strong><p>Tidal</p></strong></td>
+</td>
+  </tr>
+  <tr>
+    <td><div class="column music"><a href="https://listen.tidal.com/album/1228495" target="_blank"> <img src="https://resources.tidal.com/images/03d99bde/88f6/453e/93cb/a6abe80b924e/1280x1280.jpg"height="150" width="150">
+</a></td>
+    <td><h2><strong>84%</strong></h2></td>
+               <td><strong>The Dynasty: Roc La Familia</strong></p><strong><p>Album</p></strong><strong><p>Jay-z</p></strong><strong><p>2000</p></strong><strong><p>Tidal</p></strong></td>
+  </tr>
+    <tr>
+    <td><div class="column music"><a href="https://listen.tidal.com/album/37704285" target="_blank"> <img src="https://resources.tidal.com/images/741379ab/86cc/4877/9233/48f4d98767db/1280x1280.jpg"height="150" width="150"></td>
+    <td> <h2><strong>82%</strong></h2></td>
+                <td><strong>The Blueprint 3</p><p>Album</p><p>Jay-z</p><p>2003</p><p>Tidal</p></strong></td>
+  </tr>
+      <tr>
+    <td><a href="https://listen.tidal.com/album/36000496" target="_blank"> <img src="https://resources.tidal.com/images/2fcba5de/3b14/4b14/a7f1/0471c7882a5a/1280x1280.jpg"height="150" width="150"></td>
+    <td> <h2><strong>82%</strong></h2></td>
+                <td><strong>Vol.2 ... Hard Knock Life</p></strong><strong><p>Album</p></strong><strong><p>Jay-z</p></strong><strong><p>1997</p></strong><stong><p>Tidal</p></strong></td>
+  </tr>
+  </tbody>
+</table>
+<h1 align="middle"><strong>Shop</h1></strong>
+<table>
+  <thead>
+    <tr>
+    <th>Product</th>
+    <th>Price</th>
+    <th>Source</th>
+  </tr>
+  </thead>
+  <tbody id="myTable">
+  <tr>
+    <td><a href="https://jayzmerchandise.com/collections/all-products/products/jay-z-hello-brooklyn-womens-tee"target="_blank"><img src="https://cdn.shopify.com/s/files/1/0042/7288/1735/products/JYZ55817_540x.jpg?v=1556138247" height="150" width="150"></td>
+    <td><p2><strong><a href="https://jayzmerchandise.com/collections/all-products/products/jay-z-hello-brooklyn-womens-tee" target="_blank">Jay z Hello Brooklyn Women's Tee</p2></a></strong> <p2><strong>$24.95</p2></strong></div>
+                <td><strong><p>Shirt</p><p>jayzmerchandise.com</p><p>100% cotton</p><p>Shop</p></strong></td>
+          </div></td>
+  </tr>
+  <tr>
+    <td><div class="column music"><a href="https://jayzmerchandise.com/collections/featured-items/products/jay-z-in-my-lifetime-vol-1-beanie" target="_blank"> <img src="https://cdn.shopify.com/s/files/1/0042/7288/1735/products/JYZ76265_1024x1024@2x.jpg?v=1556920089"height="150" width="150"></td>
+    <td><p2><strong><a href="https://jayzmerchandise.com/collections/featured-items/products/jay-z-in-my-lifetime-vol-1-beanie" target="_blank">Jay-Z In My Lifetime, vol. 1 Beanie</p2></a></strong> <p2><strong>$29.95</p2></strong></div></td>
+        <td><strong><p>Hats</p><p>jayzmerchandise.com</p><p>Shop</p></strong></p></td>    
+  </tr>
+  <tr>
+       <td><a href="https://www.paperplane.shop/products/runway-long-sleeve-tee" target="_blank"> <img src="https://cdn.shopify.com/s/files/1/0015/8855/9984/products/GREEN_LONGSLEEVE_1_2000x.jpg?v=1573496662"height="150" width="150"></td>
+    <td><p2><strong><a href="https://www.paperplane.shop/products/runway-long-sleeve-tee" target="_blank">RUNWAY LONG SLEEVE TEE/Shirt</p2></a></strong> <p2><strong>$75.00</p2></strong></div></td>
+        <td><strong><p>Long Sleeve Tee</p><p>paperplan.shop</p><p>Shop</p></strong></td>   
+  </tr>
+  <tr>
+   <td><a href="https://www.paperplane.shop/products/runway-long-sleeve-tee" target="_blank"> <img src="https://cdn.shopify.com/s/files/1/0015/8855/9984/products/100570_RED_FRONT_95a0734d-912e-43be-ab8c-537dfb1016b2_2000x.jpg?v=1569504710"height="150" width="150"></td>
+    <td><p2><strong><a href="https://www.paperplane.shop/products/short-sleeve-tee-100570" target="_blank">FOX 1 TEE</p2></a></strong> <p2><strong>$45.00</p2></strong></div></td>
+        <td><strong><p>Short Sleeve Tee/Shirt</p><p>paperplan.shop</p><p>Shop</p></strong></td>   
+  </tr>
+        <tr>
+   <td><a href="https://www.paperplane.shop/products/crown-original-59fifty-fitted-with-black-undervisor" target="_blank"> <img src="https://cdn.shopify.com/s/files/1/0015/8855/9984/products/0017H807_59FIFTY_PAPERPLANES_NONLIC_BLK_F_2000x.jpg?v=1564169580"height="150" width="150"></td>
+    <td><p2><strong><a href="" target="_blank">THE ORIGINAL CROWN FITTED W/ BLACK UNDERVISOR</p2></a></strong> <p2><strong>$60.00</p2></strong></div></td>
+        <td><strong><p>Hat</p><p>paperplan.shop</p><p>100% Wool</p><p>Shop</p></strong></td>   
+  </tr>
+  <tr>
+  
+
+  </tr>
+
+  <tr>
+     <td><a href="https://cdn.shopify.com/s/files/1/0015/8855/9984/products/untitled-1_7fb97d1b-770f-4fba-8340-cbb2cd07726d_2000x.jpg?v=1572880534" target="_blank"> <img src="https://cdn.shopify.com/s/files/1/0015/8855/9984/products/untitled-1_7fb97d1b-770f-4fba-8340-cbb2cd07726d_2000x.jpg?v=1572880534"height="150" width="150"></td>
+    <td><p2><strong><a href="https://www.paperplane.shop/products/cargo-pants-100558" target="_blank">STOWAWAY CARGO PANT</p2></a></strong> <p2><strong>$145.00</p2></strong></div></td>
+        <td><strong><p>Bottoms</p><p>paperplan.shop</p><p>Shop</p></strong></td>   
+</td>
+  </tr>
+  <tr>
+     <td><a href="https://www.paperplane.shop/products/hoodie" target="_blank"> <img src="https://cdn.shopify.com/s/files/1/0015/8855/9984/products/9C45B57C-AE75-44E4-9C75-3FCE1F6CA04C_2000x.jpg?v=1573235203"height="150" width="150"></td>
+    <td><p2><strong><a href="https://www.paperplane.shop/products/cargo-pants-100558" target="_blank">P.E.A.C.E. HOODIE
+</p2></a></strong> <p2><strong>$130.00</p2></strong></div></td>
+        <td><strong><p>Hoodie</p><p>paperplan.shop</p><p>Shop</p></strong></td>   
+  </tr>
+    
+  </tbody>
+</table>
+<button onclick="topFunction()" id="myBtn2" title="Go to top">Top Of Page</button>
+
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn2");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
 
 <script>
 var coll = document.getElementsByClassName("collapsible");
@@ -855,345 +1210,40 @@ $(document).ready(function(){
 });
 
 </script>
-<script>
-$(document).ready(function(){
-  $("#myInput2").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-function autocomplete(inp, arr) {
-  /*the autocomplete function takes two arguments,
-  the text field element and an array of possible autocompleted values:*/
-  var currentFocus;
-  /*execute a function when someone writes in the text field:*/
-  inp.addEventListener("input", function(e) {
-      var a, b, i, val = this.value;
-      /*close any already open lists of autocompleted values*/
-      closeAllLists();
-      if (!val) { return false;}
-      currentFocus = -1;
-      /*create a DIV element that will contain the items (values):*/
-      a = document.createElement("DIV");
-      a.setAttribute("id", this.id + "autocomplete-list");
-      a.setAttribute("class", "autocomplete-items");
-      /*append the DIV element as a child of the autocomplete container:*/
-      this.parentNode.appendChild(a);
-      /*for each item in the array...*/
-      for (i = 0; i < arr.length; i++) {
-        /*check if the item starts with the same letters as the text field value:*/
-        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-          /*create a DIV element for each matching element:*/
-          b = document.createElement("DIV");
-          /*make the matching letters bold:*/
-          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-          b.innerHTML += arr[i].substr(val.length);
-          /*insert a input field that will hold the current array item's value:*/
-          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-          /*execute a function when someone clicks on the item value (DIV element):*/
-          b.addEventListener("click", function(e) {
-              /*insert the value for the autocomplete text field:*/
-              inp.value = this.getElementsByTagName("input")[0].value;
-              /*close the list of autocompleted values,
-              (or any other open lists of autocompleted values:*/
-              closeAllLists();
-          });
-          a.appendChild(b);
-        }
-      }
-  });
-  /*execute a function presses a key on the keyboard:*/
-  inp.addEventListener("keydown", function(e) {
-      var x = document.getElementById(this.id + "autocomplete-list");
-      if (x) x = x.getElementsByTagName("div");
-      if (e.keyCode == 40) {
-        /*If the arrow DOWN key is pressed,
-        increase the currentFocus variable:*/
-        currentFocus++;
-        /*and and make the current item more visible:*/
-        addActive(x);
-      } else if (e.keyCode == 38) { //up
-        /*If the arrow UP key is pressed,
-        decrease the currentFocus variable:*/
-        currentFocus--;
-        /*and and make the current item more visible:*/
-        addActive(x);
-      } else if (e.keyCode == 13) {
-        /*If the ENTER key is pressed, prevent the form from being submitted,*/
-        e.preventDefault();
-        if (currentFocus > -1) {
-          /*and simulate a click on the "active" item:*/
-          if (x) x[currentFocus].click();
-        }
-      }
-  });
-  function addActive(x) {
-    /*a function to classify an item as "active":*/
-    if (!x) return false;
-    /*start by removing the "active" class on all items:*/
-    removeActive(x);
-    if (currentFocus >= x.length) currentFocus = 0;
-    if (currentFocus < 0) currentFocus = (x.length - 1);
-    /*add class "autocomplete-active":*/
-    x[currentFocus].classList.add("autocomplete-active");
-  }
-  function removeActive(x) {
-    /*a function to remove the "active" class from all autocomplete items:*/
-    for (var i = 0; i < x.length; i++) {
-      x[i].classList.remove("autocomplete-active");
-    }
-  }
-  function closeAllLists(elmnt) {
-    /*close all autocomplete lists in the document,
-    except the one passed as an argument:*/
-    var x = document.getElementsByClassName("autocomplete-items");
-    for (var i = 0; i < x.length; i++) {
-      if (elmnt != x[i] && elmnt != inp) {
-        x[i].parentNode.removeChild(x[i]);
-      }
-    }
-  }
-  /*execute a function when someone clicks in the document:*/
-  document.addEventListener("click", function (e) {
-      closeAllLists(e.target);
-  });
-}
 
-/*An array containing all the country names in the world:*/
-var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre & Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts & Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
 
-/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
-autocomplete(document.getElementById("myInput2"), countries);
-</script>
-<script>
-$(document).ready(function(){
-  $("#myInput3").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-function autocomplete(inp, arr) {
-  /*the autocomplete function takes two arguments,
-  the text field element and an array of possible autocompleted values:*/
-  var currentFocus;
-  /*execute a function when someone writes in the text field:*/
-  inp.addEventListener("input", function(e) {
-      var a, b, i, val = this.value;
-      /*close any already open lists of autocompleted values*/
-      closeAllLists();
-      if (!val) { return false;}
-      currentFocus = -1;
-      /*create a DIV element that will contain the items (values):*/
-      a = document.createElement("DIV");
-      a.setAttribute("id", this.id + "autocomplete-list");
-      a.setAttribute("class", "autocomplete-items");
-      /*append the DIV element as a child of the autocomplete container:*/
-      this.parentNode.appendChild(a);
-      /*for each item in the array...*/
-      for (i = 0; i < arr.length; i++) {
-        /*check if the item starts with the same letters as the text field value:*/
-        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-          /*create a DIV element for each matching element:*/
-          b = document.createElement("DIV");
-          /*make the matching letters bold:*/
-          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-          b.innerHTML += arr[i].substr(val.length);
-          /*insert a input field that will hold the current array item's value:*/
-          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-          /*execute a function when someone clicks on the item value (DIV element):*/
-          b.addEventListener("click", function(e) {
-              /*insert the value for the autocomplete text field:*/
-              inp.value = this.getElementsByTagName("input")[0].value;
-              /*close the list of autocompleted values,
-              (or any other open lists of autocompleted values:*/
-              closeAllLists();
-          });
-          a.appendChild(b);
-        }
-      }
-  });
-  /*execute a function presses a key on the keyboard:*/
-  inp.addEventListener("keydown", function(e) {
-      var x = document.getElementById(this.id + "autocomplete-list");
-      if (x) x = x.getElementsByTagName("div");
-      if (e.keyCode == 40) {
-        /*If the arrow DOWN key is pressed,
-        increase the currentFocus variable:*/
-        currentFocus++;
-        /*and and make the current item more visible:*/
-        addActive(x);
-      } else if (e.keyCode == 38) { //up
-        /*If the arrow UP key is pressed,
-        decrease the currentFocus variable:*/
-        currentFocus--;
-        /*and and make the current item more visible:*/
-        addActive(x);
-      } else if (e.keyCode == 13) {
-        /*If the ENTER key is pressed, prevent the form from being submitted,*/
-        e.preventDefault();
-        if (currentFocus > -1) {
-          /*and simulate a click on the "active" item:*/
-          if (x) x[currentFocus].click();
-        }
-      }
-  });
-  function addActive(x) {
-    /*a function to classify an item as "active":*/
-    if (!x) return false;
-    /*start by removing the "active" class on all items:*/
-    removeActive(x);
-    if (currentFocus >= x.length) currentFocus = 0;
-    if (currentFocus < 0) currentFocus = (x.length - 1);
-    /*add class "autocomplete-active":*/
-    x[currentFocus].classList.add("autocomplete-active");
-  }
-  function removeActive(x) {
-    /*a function to remove the "active" class from all autocomplete items:*/
-    for (var i = 0; i < x.length; i++) {
-      x[i].classList.remove("autocomplete-active");
-    }
-  }
-  function closeAllLists(elmnt) {
-    /*close all autocomplete lists in the document,
-    except the one passed as an argument:*/
-    var x = document.getElementsByClassName("autocomplete-items");
-    for (var i = 0; i < x.length; i++) {
-      if (elmnt != x[i] && elmnt != inp) {
-        x[i].parentNode.removeChild(x[i]);
-      }
-    }
-  }
-  /*execute a function when someone clicks in the document:*/
-  document.addEventListener("click", function (e) {
-      closeAllLists(e.target);
-  });
-}
-
-/*An array containing all the country names in the world:*/
-var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre & Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts & Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
-
-/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
-autocomplete(document.getElementById("myInput3"), countries);
-</script>
-<script>
-$(document).ready(function(){
-  $("#myInput4").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-function autocomplete(inp, arr) {
-  /*the autocomplete function takes two arguments,
-  the text field element and an array of possible autocompleted values:*/
-  var currentFocus;
-  /*execute a function when someone writes in the text field:*/
-  inp.addEventListener("input", function(e) {
-      var a, b, i, val = this.value;
-      /*close any already open lists of autocompleted values*/
-      closeAllLists();
-      if (!val) { return false;}
-      currentFocus = -1;
-      /*create a DIV element that will contain the items (values):*/
-      a = document.createElement("DIV");
-      a.setAttribute("id", this.id + "autocomplete-list");
-      a.setAttribute("class", "autocomplete-items");
-      /*append the DIV element as a child of the autocomplete container:*/
-      this.parentNode.appendChild(a);
-      /*for each item in the array...*/
-      for (i = 0; i < arr.length; i++) {
-        /*check if the item starts with the same letters as the text field value:*/
-        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-          /*create a DIV element for each matching element:*/
-          b = document.createElement("DIV");
-          /*make the matching letters bold:*/
-          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-          b.innerHTML += arr[i].substr(val.length);
-          /*insert a input field that will hold the current array item's value:*/
-          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-          /*execute a function when someone clicks on the item value (DIV element):*/
-          b.addEventListener("click", function(e) {
-              /*insert the value for the autocomplete text field:*/
-              inp.value = this.getElementsByTagName("input")[0].value;
-              /*close the list of autocompleted values,
-              (or any other open lists of autocompleted values:*/
-              closeAllLists();
-          });
-          a.appendChild(b);
-        }
-      }
-  });
-  /*execute a function presses a key on the keyboard:*/
-  inp.addEventListener("keydown", function(e) {
-      var x = document.getElementById(this.id + "autocomplete-list");
-      if (x) x = x.getElementsByTagName("div");
-      if (e.keyCode == 40) {
-        /*If the arrow DOWN key is pressed,
-        increase the currentFocus variable:*/
-        currentFocus++;
-        /*and and make the current item more visible:*/
-        addActive(x);
-      } else if (e.keyCode == 38) { //up
-        /*If the arrow UP key is pressed,
-        decrease the currentFocus variable:*/
-        currentFocus--;
-        /*and and make the current item more visible:*/
-        addActive(x);
-      } else if (e.keyCode == 13) {
-        /*If the ENTER key is pressed, prevent the form from being submitted,*/
-        e.preventDefault();
-        if (currentFocus > -1) {
-          /*and simulate a click on the "active" item:*/
-          if (x) x[currentFocus].click();
-        }
-      }
-  });
-  function addActive(x) {
-    /*a function to classify an item as "active":*/
-    if (!x) return false;
-    /*start by removing the "active" class on all items:*/
-    removeActive(x);
-    if (currentFocus >= x.length) currentFocus = 0;
-    if (currentFocus < 0) currentFocus = (x.length - 1);
-    /*add class "autocomplete-active":*/
-    x[currentFocus].classList.add("autocomplete-active");
-  }
-  function removeActive(x) {
-    /*a function to remove the "active" class from all autocomplete items:*/
-    for (var i = 0; i < x.length; i++) {
-      x[i].classList.remove("autocomplete-active");
-    }
-  }
-  function closeAllLists(elmnt) {
-    /*close all autocomplete lists in the document,
-    except the one passed as an argument:*/
-    var x = document.getElementsByClassName("autocomplete-items");
-    for (var i = 0; i < x.length; i++) {
-      if (elmnt != x[i] && elmnt != inp) {
-        x[i].parentNode.removeChild(x[i]);
-      }
-    }
-  }
-  /*execute a function when someone clicks in the document:*/
-  document.addEventListener("click", function (e) {
-      closeAllLists(e.target);
-  });
-}
-
-/*An array containing all the country names in the world:*/
-var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre & Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts & Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
-
-/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
-autocomplete(document.getElementById("myInput4"), countries);
-</script>
 </body>
 </html>
 
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
 
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
 </body>
 </html>
